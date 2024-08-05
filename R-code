@@ -1,0 +1,38 @@
+######## Setting up Git and connecting to Github via R August 5, 2024
+
+setwd("/Users/tayloraubuchon/Desktop/MO Living Collections")
+
+library(usethis)
+
+#tell Git who we are
+
+use_git_config(user.name="tayaubuchon30", user.email="tayaubuchon@gmail.com")
+
+use_git()
+# in the console prompts will show up, say yes
+# R may restart, and there will be a new "Git" tab in the Environment box
+
+library(tidyverse)
+
+# connect the Github to RStudio
+library(usethis)
+create_github_token() # will take you to your Github website
+library(gitcreds)
+gitcreds_set()
+
+#? Enter password or token: 
+#-> Adding new credentials...
+#-> Removing credentials from cache...
+#-> Done.
+
+use_github()
+#✔ Creating GitHub repository 'tayaubuchon30/testrepo'
+#✔ Setting remote 'origin' to 'https://github.com/tayaubuchon30/testrepo.git'
+#✔ Pushing 'master' branch to GitHub and setting 'origin/master' as upstream branch
+
+# You can also create the repo on Github first. Create the repo, then when you start a new project in R, use the version control
+# option, enter your repo URL, and you're good to go
+
+# now you can also push your commits to Github
+
+
